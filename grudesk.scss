@@ -1,0 +1,352 @@
+@import 'reboot';
+
+.logo {
+  position: absolute;
+  width: 168px;
+  height: 60px;
+  left: 374px;
+  top: 59px;
+  background: url('Frame.svg') no-repeat center center;
+  z-index: 100;
+}
+
+.frames {
+  position: relative;
+  width: 1920px;
+  height: 900px;
+  min-height: 900px;
+  background: url("johannes-groll-mrIaqKh9050-unsplash 1.jpg") center center no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+
+  transition: background-image 1s ease-in-out;
+
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    mix-blend-mode: color;
+    background-color: #499FDB;
+    opacity: 0.66;
+    z-index: 2;
+  }
+
+  &::after {
+    z-index: 1;
+    background: #131714;
+    mix-blend-mode: multiply;
+  }
+
+  nav {
+    position: absolute;
+    width: 335px;
+    height: 481px;
+    left: 1625px;
+    top: 243px;
+    z-index: 115;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+
+      position: absolute;
+      width: 335px;
+      height: 300px;
+      left: calc(50% - 335px/2);
+      bottom: 170px;
+
+      a {
+        font-family: Roboto Condensed;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 60px;
+        transition: color 1s ease-in-out;
+
+        text-decoration: none;
+        color: #ABABAB;
+
+        &.active {
+          color: #fff;
+          position: relative;
+        }
+      }
+
+      .border {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 34px;
+        top: calc(30px - 34px/2);
+        left: 61%;
+        background: #80C1EE;
+
+        z-index: 5;
+
+        transition: top 1s ease-in-out;
+      }
+    }
+  }
+
+  .line {
+    position: absolute;
+    width: 304px;
+    left: 1380px;
+    top: 638px;
+
+    z-index: 4;
+
+    border: 6px solid #FFFFFF;
+    transform: rotate(-90deg);
+
+    transition: 1s ease-in-out, border-width 0s;
+  }
+}
+
+.arrow-2,
+.arrow-1 {
+  position: absolute;
+  left: 1785px;
+  top: 607px;
+
+  z-index: 5;
+
+  box-sizing: border-box;
+}
+
+.frames:not(.active--frame--2) {
+  nav a.nav--1  {
+    color: #fff;
+  }
+}
+
+.active--frame--2 {
+  &.frames {
+    background-image: url("johannes-groll-mrIaqKh9050-unsplash 2.jpg");
+  }
+
+  nav a.nav--2  {
+    color: #fff;
+    ~ .border {
+      top: calc(90px - 34px/2);
+    }
+  }
+  .arrow-2 {
+    top: 73px;
+    opacity: 1;
+    transition: opacity 0s, top 1s ease-in-out;
+  }
+  .line {
+    border-color: #499FDB;
+    left: 769px;
+    top: 220px;
+    transform: rotate(0);
+  }
+
+  .rectangle.rectangle-11 {
+    top: -259px;
+    
+    background: #499FDB;
+    mix-blend-mode: screen;
+
+    img {
+      transform: rotate(-180deg);
+      top: 100%;
+    }
+  }
+  .rectangle.rectangle-12,
+  .frame--1 {
+    top: -100%;
+    opacity: 0;
+    transition: opacity 1s, top 1s ease-in-out;
+  }
+  .frame--2 {
+    top: 0;
+    opacity: 1;
+    transition: opacity 1s ease-in-out, top 1s ease-in-out;
+  }
+}
+.arrow-2 {
+  left: 1785px;
+  top: 100%;
+  transform: rotate(-180deg);
+  opacity: 0;
+  transition: opacity 1s, top 2s ease-in-out;
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 100;
+
+  h1 {
+    position: absolute;
+    left: 19.64%;
+    right: 20.39%;
+    top: 26.44%;
+    bottom: 52.33%;
+
+    max-width: 1190px;
+
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 90px;
+    line-height: 80px;
+    /* or 89% */
+
+    color: #fff;
+    z-index: 5;
+
+    .mark {
+      color: #499FDB;
+      text-decoration-line: underline;
+    }
+  }
+
+  h2 {
+    position: absolute;
+    left: 19.64%;
+    right: 42.24%;
+    top: 51.78%;
+    bottom: 37.44%;
+
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    /* or 133% */
+
+    color: #FFFFFF;
+    z-index: 5;
+  }
+
+  .desc {
+    position: absolute;
+    left: 19.64%;
+    right: 32.19%;
+    top: 64%;
+    bottom: 26.67%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 133% */
+
+    color: #FFFFFF;
+    z-index: 5;
+  }
+}
+
+.frame--1 {
+  transition: opacity 1s ease-in-out, top 0s;
+
+  .button {
+    position: absolute;
+    width: 191px;
+    height: 44px;
+    left: 19.64%;
+    top: 690px;
+  }
+}
+
+.frame--2 {
+  top: 100%;
+  opacity: 0;
+  transition: opacity 1s, top 2s ease-in-out;
+
+  .mark {
+    display: block
+  }
+
+  h1 {
+    left: 19.64%;
+    right: 44.11%;
+    top: 37.67%;
+    bottom: 41.11%;
+  }
+
+  h2 {
+    left: 19.64%;
+    right: 42.24%;
+    top: 62%;
+    bottom: 28.22%;
+  }
+
+  .desc {
+    left: 60%;
+    right: 15.78%;
+    top: 37.78%;
+    bottom: 46.56%;
+    color: #131714;
+    font-weight: 500;
+  }
+}
+
+.button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+
+  position: absolute;
+  left: 377px;
+  top: 690px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+
+  background: #499FDB;
+  border-radius: 22px;
+  z-index: 5;
+}
+
+.rectangle {
+  position: absolute;
+  mix-blend-mode: screen;
+  z-index: 5;
+
+  &.rectangle-11 {
+    width: 703px;
+    height: 700px;
+    left: 1005px;
+    top: 22%;
+
+    transition: top 1s ease-in-out, background-color 1s ease-in-out;
+
+    img {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &.rectangle-12 {
+    width: 915px;
+    height: 288px;
+    left: 1005px;
+    top: -74px;
+    transition: opacity 1s ease-in-out, top 0s;
+  }
+
+}
